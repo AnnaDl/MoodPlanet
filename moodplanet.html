@@ -1,0 +1,166 @@
+<!DOCTYPE html
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Welcome to the mood planet</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="style1.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="style1.css" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+    <ul>
+      <li><a href="moodplanet.html">Home</a></li>
+      <li><a href="externallinks.html">External links</a></li>
+      <li><a href="game.html">Start Game</a></li>
+      <li><a href="info.html">Contact Info</a></li>
+    </ul>
+
+
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="windowsize"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- href="mailto:your@email.com" -->
+
+    <header class="masthead text-center text-white">
+      <div class="masthead-content">
+        <div class="container">
+          <img src="logoimage.png.png" alt="logoimage" height="300" width="300">
+          <h1 class="masthead-heading mb-0" id="mp">Mood Planet</h1>
+          <h2 class="masthead-subheading mb-0"id="tmp">{ Travel to your mood planet }</h2>
+          <a href="description.html" class="btn btn-primary btn-xl rounded-pill mt-5"id="lm">Learn More</a>
+        </div>
+      </div>
+      <div class="bg-circle-1 bg-circle"></div>
+      <div class="bg-circle-2 bg-circle"></div>
+      <div class="bg-circle-3 bg-circle"></div>
+      <div class="bg-circle-4 bg-circle"></div>
+    </header>
+
+    <script type="text/javascript">
+
+      //We are going to use
+      var dataItems = {
+        "items": [
+           {
+              //"ord": 1,
+            //  "title":"Cute",
+          //    "desc": "This is Winston! Winston can't code, but he ilikes to have fun.",
+            //  "imgsrc": "downloads/winston.jpg"
+          //  },
+          // {
+            //  "ord": 2,
+            //  "title":"Software Development",
+            //  "desc": "Building things people will use and appreciate is very rewarding!",
+            //  "imgsrc": "downloads/girls-who-code-2.jpg"
+            //},
+            //{
+            //  "ord": 3,
+            //  "title":"Golden Wave - Digital Pixels",
+            //  "desc": "This is the last section bank, but you can easily add more :)",
+          //    "imgsrc": "downloads/womentech.0.png"
+            }
+        ]
+      }
+    </script>
+
+   <div id="Golden Wave">
+   </div>
+   <script>
+
+    //here we'll assign our container to a variable. This means we'll only need to find interval
+    //in the dom once as opposed to each time.
+    var htmlContainer = $("#");
+
+
+    //we'll use a For-In loop to itterate through the dataItems
+    //to render inside our container ("GirlsWhoCode").
+
+    for (var i = 0; i < dataItems.items.length; i++) {
+      //temp variable if item has an even ord value
+      var imageRightClass = "order-lg-2";
+      var textLeftClass = "order-lg-1";
+
+      //here we are checking as to whether or not the ord value is an even
+      //or odd number.  We do this with the modulus operator.  If the remainder
+      //is not zero, we set the temp css varaibles to an empty string.
+      if (i % 2 != 0 ) { imageRightClass =""; textLeftClass="";}
+
+      //string template with variable placeholders.  There are a many
+      //frameworks like Angular and Vue that have more complexity but offer
+      //better maintenance and reusability.
+      htmlContainer.append(
+        " <section>" +
+              "<div class=container'>" +
+                "<div class='row align-items-center'>" +
+                  "<div class='col-lg-6 " + imageRightClass + "'>" +
+                    "<div class='p-5'>" +
+                      "<img class='img-fluid rounded-circle' src='" + dataItems.items[i].imgsrc + "' alt='" + dataItems.items[i].title + "'>" +
+                    "</div>" +
+                  "</div>" +
+                  "<div class='col-lg-6 " + textLeftClass + "'>" +
+                    "<div class='p-5'>" +
+                      "<h2 class='display-4'>" + dataItems.items[i].title + "</h2>" +
+                      "<p>" + dataItems.items[i].desc + "</p>" +
+                    "</div>" +
+                  "</div>" +
+                "</div>" +
+              "</div>" +
+            "</section>"
+          );
+        }
+
+
+
+   </script>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+      <div class="container">
+          <p class="m-0 text-center text-white small">Copyright &copy;  </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+    <script type="text/javascript">
+       //First, we obtain the width of the window with a little help from
+       //Jquery (a javascript framework)
+       $('#windowsize').text('Window Size: ' +$(window).width());
+
+       //Next, we want to report on the size of the window each time
+       //a user resizes their window.
+       //We do this by binding to the resize event of the window object
+       $(window).on('resize', function(e) {
+            $('#windowsize').text('Window Size: ' + $(window).width());
+       });
+     </script>
+  </body>
+
+</html>
