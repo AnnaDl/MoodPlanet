@@ -37,4 +37,20 @@ font1 {
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
-}
+}*/
+
+a {
+    font-fmaly:"Tahoma", Geneva, sans-serif;
+  }
+
+h1 {
+    font-fmaly:"Tahoma", Geneva, sans-serif;
+  }
+
+h2 {
+    font-fmaly:"Tahoma", Geneva, sans-serif;
+  }
+
+h3 {
+    font-fmaly:"Tahoma", Geneva, sans-serif;
+  }
