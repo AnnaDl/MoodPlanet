@@ -16,3 +16,7 @@ font {
 font1 {
   color: Red;
 }
+
+div.usimg {
+  transform: rotate(180deg);
+}
