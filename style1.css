@@ -37,6 +37,10 @@ nav a:hover{
   margin-left: 40%;
 }
 
+#mydiv{
+  width:100%;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
